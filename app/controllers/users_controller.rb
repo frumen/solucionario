@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Bienvenido!"
+      UserMailer.registration_confirmation(@user).deliver
       redirect_to @user
     else
       (Area.all - @user.areas).each do |area|
