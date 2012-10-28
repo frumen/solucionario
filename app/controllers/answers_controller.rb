@@ -22,6 +22,7 @@ class AnswersController < ApplicationController
 		if @answer.save
 			@mensaje = "Usted ahora tiene #{@score} puntos."
 			flash[:success] = @mensaje
+			UserMailer.answer_written(@user, @question).deliver
 			@cuser.update_attribute(:score, @score) 
 			sign_in @cuser
 			redirect_to user_question_path(@user, @question)
@@ -59,6 +60,7 @@ class AnswersController < ApplicationController
 		  			@fraction = (100-@fraction)/100
 		  			@g_score = @genius.score + (@total*@fraction)
 		  			@genius.update_attribute(:score, @g_score)
+		  			UserMailer.new_score(@genius).deliver
 					@comments = @answer.comments
 					@comments.each do |c|
 						@score = c.writer.score
@@ -66,6 +68,7 @@ class AnswersController < ApplicationController
 						@score = @score + @diferencia
 						if c.writer!=current_user
 							c.writer.update_attribute(:score, @score)
+							UserMailer.new_score(c.writer).deliver
 						end
 					end
 					redirect_to user_question_path(@user, @question)
@@ -83,6 +86,7 @@ class AnswersController < ApplicationController
 		  		@fraction = (100-@fraction)/100
 		  		@g_score = @genius.score + (@total*@fraction)
 		  		@genius.update_attribute(:score, @g_score)
+		  		UserMailer.new_score(@genius).deliver
 		  		redirect_to user_question_path(@user, @question)
 		  	else
 		  		redirect_to edit_user_question_answer_path(@user, @question, @answer)
