@@ -18,7 +18,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :score, :area_users_attributes, :country_id, :birth, :surname, :sex
+  attr_accessible :email, :name, :password, :password_confirmation, :score, :area_users_attributes, :country_id, :birth, :surname, :sex, :confirmed
   has_secure_password
   has_many :questions, dependent: :destroy
   has_many :written_answers, class_name: "Answer", foreign_key: "user_id"

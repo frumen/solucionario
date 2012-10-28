@@ -21,10 +21,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      sign_in @user
-      flash[:success] = "Bienvenido!"
+      flash[:alert] = "Se ha enviado un mail para confirmar tu direccion."
       UserMailer.registration_confirmation(@user).deliver
-      redirect_to @user
+      redirect_to root_path
     else
       (Area.all - @user.areas).each do |area|
       @user.area_users.build( area_id: area.id )
@@ -95,6 +94,14 @@ class UsersController < ApplicationController
     @user = current_user
     @score = @user.score+150
     @user.update_attribute(:score, @score) 
+    sign_in @user
+    redirect_to @user
+  end
+
+  def confirm_reg
+    @user = User.find(params[:id])
+    @confirm = 1
+    @user.update_attribute(:confirmed, @confirm) 
     sign_in @user
     redirect_to @user
   end

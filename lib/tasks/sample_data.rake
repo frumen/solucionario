@@ -30,7 +30,8 @@ namespace :db do
                  score: 100,
                  country_id: 2,
                  sex: "M",
-                 birth: '1990-04-10')
+                 birth: '1990-04-10',
+                 confirmed: 1)
     admin.toggle!(:admin)
     5.times do |n|
       name  = Faker::Name.name
@@ -44,7 +45,8 @@ namespace :db do
                    password_confirmation: password,
                    country_id: country,
                    sex: "M",
-                   birth: '1985-12-05')
+                   birth: '1985-12-05',
+                   confirmed: 1)
     end
     Area.create!(name:'Negocios')
     Area.create!(name:'Tecnologia e Internet')

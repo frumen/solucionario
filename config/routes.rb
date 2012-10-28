@@ -25,6 +25,8 @@ Solucionario::Application.routes.draw do
 
   match '/buy_lrg', to: "users#buy_lrg"
 
+  match ':users/:confirm_reg/:id', to: "users#confirm_reg"
+
   match '/my_questions', to: "users#my_questions"
 
   match '/participation', to: "users#participation"
