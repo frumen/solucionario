@@ -8,18 +8,23 @@ en:
   activerecord:
     attributes:
       user:
-        email: "E-mail"
-        name: "Nombre"
-        surname: "Apellido"
-        birth: "Fecha de Nacimiento"
-        sex: "Sexo"
-        password: "Contraseña"
-        password_digest: "Contraseña"
-        password_confirmation: "Confirmación de contraseña"
+        email: "El e-mail"
+        name: "El nombre"
+        surname: "El apellido"
+        birth: "La fecha de nacimiento"
+        sex: "El sexo"
+        password: "La contraseña"
+        password_digest: "La contraseña"
+        password_confirmation: "La confirmación de contraseña"
+        area_users: "Debes "
       question:
-        content: "Contenido"
-        title: "Título"
-        level: "Dificultad"    
+        content: "El contenido"
+        title: "El título"
+        level: "Debes "    
+      answer:
+        content: "El contenido"
+      comment:
+        content: "El contenido"
     errors:
       models:
         user:
@@ -27,6 +32,7 @@ en:
             email:
               blank: "no puede estar vacío."
               invalid: "no tiene formato válido."
+              taken: "ya está registrado."
             name:
               blank: "no puede estar vacío."
             surname:
@@ -39,11 +45,24 @@ en:
               blank: "no puede estar vacía."
             password:
               too_short: "es muy corta, debe tener al menos 8 caracteres."
+              confirmation: "no coincide con la confirmación."
             password_confirmation:
               blank: "no puede estar vacía."
+            area_users:
+              blank: "marcar al menos una Experiencia."
         question:
           attributes:
             content:
               blank: "no puede estar vacío."
             title:
+              blank: "no puede estar vacío."
+            level:
+              blank: "elegir un nivel de urgencia."
+        answer:
+          attributes:
+            content:
+              blank: "no puede estar vacío."
+        comment:
+          attributes:
+            content:
               blank: "no puede estar vacío."

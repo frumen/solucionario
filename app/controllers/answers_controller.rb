@@ -27,7 +27,7 @@ class AnswersController < ApplicationController
 			sign_in @cuser
 			redirect_to user_question_path(@user, @question)
 		else
-			render root_path
+			render 'new'
 		end
 	end
 
@@ -52,7 +52,7 @@ class AnswersController < ApplicationController
 					@fraction = @fraction + Integer(c.second[:useful])
 				end
 			end
-			if @fraction<= 50
+			if @fraction<= 50 && @fraction>=0
 		  		if @answer.update_attributes(params[:answer])
 		  			flash[:success] = "Calificada!"
 		  			@question.update_attribute(:solved, 1)
@@ -76,6 +76,7 @@ class AnswersController < ApplicationController
 		      		redirect_to edit_user_question_answer_path(@user, @question, @answer)
 		      	end
 		      else
+		      	flash[:error] = "Error! Los porcentajes de comentarios deben sumar menos de 50."
 		      	redirect_to edit_user_question_answer_path(@user, @question, @answer)
 	      	end
 	      else

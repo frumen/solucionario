@@ -25,6 +25,7 @@ class UsersController < ApplicationController
       UserMailer.registration_confirmation(@user).deliver
       redirect_to root_path
     else
+      @user.area_users=[]
       (Area.all - @user.areas).each do |area|
       @user.area_users.build( area_id: area.id )
       end
@@ -47,6 +48,7 @@ class UsersController < ApplicationController
       sign_in @user
       redirect_to @user
     else
+      @user.area_users=[]
       (Area.all - @user.areas).each do |area|
       @user.area_users.build( area_id: area.id )
       end

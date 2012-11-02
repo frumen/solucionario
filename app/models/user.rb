@@ -36,6 +36,7 @@ class User < ActiveRecord::Base
   validates :surname, presence: true, length: {maximum: 50}
   validates :birth, presence: true
   validates :sex, presence: true
+  validates :area_users, presence: true
   validates :country_id, presence: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, 

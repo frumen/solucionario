@@ -21,7 +21,7 @@
       <br>
       <div class="fecha">
        <%= f.date_select :birth,
-        {:start_year => Time.now.year,
+        {:start_year => Time.now.year-18,
         :end_year => 1900,
         :use_month_numbers => true,
         :order => [:day, :month, :year],

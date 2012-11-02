@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
 			flash[:success] = "Comentario enviado."
 			redirect_to user_question_path(@user, @question)
 		else
-			render root_path
+			render 'new'
 		end
   end
 
