@@ -4,7 +4,10 @@
 <div class="row">
   <div class="span6 offset3">
     <%= render 'shared/user_form' %>
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">Cambiar Imagen</a>
+    <div class="span4">
+    	<br><br>
+	    <%= gravatar_for @user %>
+	    <a href="http://gravatar.com/emails">Cambiar mi imagen</a>
+	</div>
   </div>
 </div>

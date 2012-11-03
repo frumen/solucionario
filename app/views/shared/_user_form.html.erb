@@ -49,7 +49,8 @@
         <h3>Experiencias</h3>
         <br>
         <%= f.fields_for :area_users do |ff|%>
-          <label class="checkbox">
+        <div class="span2">
+          <label class="checkbox inline">
             <p>
             <%= ff.check_box :_destroy, 
                 {checked: ff.object.persisted?},'0','1'%>
@@ -57,11 +58,16 @@
             <%= ff.hidden_field :area_id %>
             </p>
           </label>
+        </div>
         <%end%>
+        <div class="span2">
+        <br>
+        <br>
         <br>
       <%if @user==current_user%>
       <%= f.submit "Cambiar mis datos", class: "btn btn-large btn-primary" %>
       <%else%>
       <%= f.submit "Crear mi cuenta", class: "btn btn-large btn-primary" %>
       <%end%>
+    </div>
     <% end %>
