@@ -13,9 +13,10 @@
   <% if answer.comments.any? %>
       <% @comments = answer.comments %>
       <div class="comment_title">
-      <h4>Comentarios (<%= answer.comments.count %>)</h4>
+        <div class="cquant">
+          Comentarios (<%= answer.comments.count %>)
+        </div>
       </div>
-      <br>
       <ol class="comments">
         <%= render @comments %>
       </ol>

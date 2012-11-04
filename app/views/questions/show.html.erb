@@ -1,22 +1,31 @@
 <% provide(:title, @question.title+" por "+@user.name) %>
 <div class="row">
   	  <h2><%= link_to(@user.name, @user) %> preguntó...</h2>
-      <h3>
-        <%= @question.title %> - <%= @question.area.name %>
-        <% if @question.level==1 %>
-        - Urgencia Baja
-        <% elsif @question.level==2 %>
-        - Urgencia Media
-        <% else %>
-        - Urgencia Alta
-        <% end %>
-      </h3>
-    <%= simple_format(@question.content) %>
+        <div class="qtitle">
+          <%= @question.title %>
+        </div>
+        <div class="qarea">
+          <%= @question.area.name %>
+        </div>
+        <div class="qlevel">
+          <% if @question.level==1 %>
+          Urgencia Baja
+          <% elsif @question.level==2 %>
+          Urgencia Media
+          <% else %>
+          Urgencia Alta
+          <% end %>
+        </div>
+        <br><br>
+        <div class="qcontent">
+            <%= simple_format(@question.content) %>
+        </div>
 </div>
 <br><br>
 <% if @question.answers.any? %>
-      <h3>Respuestas (<%= @answer_count %>)</h3>
-      <br>
+      <div class="aquant">
+        Respuestas (<%= @answer_count %>)
+      </div>
       <ol class="answers">
         <%= render @answers %>
       </ol>

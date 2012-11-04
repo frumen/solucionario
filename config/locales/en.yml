@@ -54,6 +54,7 @@ en:
           attributes:
             content:
               blank: "no puede estar vacío."
+              too_long: "es demasiado largo, tienes un máximo de 2000 caracteres."
             title:
               blank: "no puede estar vacío."
             level:
@@ -62,7 +63,9 @@ en:
           attributes:
             content:
               blank: "no puede estar vacío."
+              too_long: "es demasiado largo, tienes un máximo de 2000 caracteres."
         comment:
           attributes:
             content:
               blank: "no puede estar vacío."
+              too_long: "es demasiado largo, tienes un máximo de 500 caracteres."

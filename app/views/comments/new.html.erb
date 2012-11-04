@@ -1,8 +1,9 @@
 <% provide(:title, 'Comentar sobre Respuesta') %>
 <div class="row">
       <h2><%= link_to(@user.name, @user) %> respondió...</h2>
-      <br>
-    <%= @answer.content %>
+      <div class="qcontent">
+        <%= @answer.content %>
+      </div>
 </div>
 <br>
 <h1>Comenta sobre la Respuesta!</h1>

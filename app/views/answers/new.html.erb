@@ -1,9 +1,12 @@
 <% provide(:title, 'Responder Pregunta') %>
 <div class="row">
       <h2><%= link_to(@user.name, @user) %> preguntó...</h2>
-      <h3><%= @question.title %></h3>
-      <br>
-    <%= @question.content %>
+      <div class="qtitle">
+        <%= @question.title %>
+      </div>
+      <div class="qcontent">
+        <%= @question.content %>
+      </div>
 </div>
 <br>
 <h1>Responde la Pregunta!</h1>

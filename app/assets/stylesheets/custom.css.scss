@@ -63,6 +63,62 @@ h2 {
   color: #555;
 }
 
+.qtitle {
+  font-size: 2.7em;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-weight: normal;
+  color: #555;
+}
+
+.qarea {
+  font-size: 2.1em;
+  letter-spacing: -1px;
+  text-align: left;
+  margin-bottom: 13px;
+  margin-left: 10px;
+  font-weight: normal;
+  color: #555;
+}
+
+.qlevel {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  text-align: left;
+  margin-left: 10px;
+  font-weight: normal;
+  color: #555;
+}
+
+.qcontent {
+  font-size: 1.1em;
+  text-align: justify;
+  margin-bottom: 13px;
+  margin-left: 10px;
+  margin-right: 40px;
+  font-weight: normal;
+  color: #555;
+}
+
+.aquant {
+  font-size: 1.3em;
+  text-align: left;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #555;
+}
+
+.cquant {
+  font-size: 1.1em;
+  text-align: left;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #555;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -336,7 +392,6 @@ aside {
 
   li {
     padding: 10px 0;
-    border-top: 1px solid #AAA;
   }
 }
 .content {
@@ -347,6 +402,7 @@ aside {
 }
 .comment_button {
   text-align: right;
+  margin-bottom: 15px;
 }
 .timestamp {
   color: $grayLight;
