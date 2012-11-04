@@ -1,5 +1,10 @@
 <% provide(:title, 'Preguntas') %>
 <h1>Preguntas que puedes responder</h1>
+
+<% if @questions.empty? %>
+ <h2>No hay preguntas cargadas para tus áreas de experiencia.</h2>
+<% end %>
+
 <ul class="questions">
 	<% @questions.each do |q| %>
 	<li>	

@@ -36,7 +36,7 @@
     <% end %>
   <% end %>
   <%if @useful == 0 and @shown != 0 %>
-    <%= link_to "Ninguna es correcta", "/questions/refund/#{@question.id}", class: "btn btn-large btn-primary" %>
+    <%= link_to "Ninguna es correcta", "/refund/#{@question.id}", class: "btn btn-large btn-primary" %>
   <%end%>
 </center>
 <% end %>

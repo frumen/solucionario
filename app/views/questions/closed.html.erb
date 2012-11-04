@@ -1,5 +1,11 @@
 <% provide(:title, "Consultas solucionadas") %>
 <h1>Consultas solucionadas</h1>
+
+<% if @questions.empty? %>
+ <h2>No hay preguntas solucionadas.</h2>
+<% end %>
+
 <div class="questions">
 <%= render @questions %>
+
 </div>

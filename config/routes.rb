@@ -33,7 +33,7 @@ Solucionario::Application.routes.draw do
 
   match '/solutions', to: "questions#closed"
 
-  match ':questions/:refund/:id', to: "questions#refund"
+  match ':refund/:id', to: "questions#refund"
 
   root to: 'static_pages#home'
 

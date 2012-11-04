@@ -1,5 +1,11 @@
 <% provide(:title, "Mis Consultas") %>
 <h1>Mis Consultas</h1>
+
+<% if @questions.empty? %>
+ <h2>No has cargado consultas.</h2>
+<% end %>
+
 <div class="questions">
 <%= render @questions %>
+
 </div>
