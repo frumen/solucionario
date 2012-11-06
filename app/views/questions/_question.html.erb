@@ -12,6 +12,6 @@
         - Urgencia Alta
         <% end %>
   <span class="timestamp">
-    Realizada por <%= question.user.name %>, <%= question.created_at %> .
+    Realizada por <%= question.user.name %>, el <%= question.created_at.to_formatted_s(:short) %>.
   </span>
 </li>

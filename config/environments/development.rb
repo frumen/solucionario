@@ -6,6 +6,9 @@ Solucionario::Application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  config.time_zone = 'America/Argentina/Buenos_Aires'
+  #config.time_zone = 'Buenos_Aires'
+
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
 

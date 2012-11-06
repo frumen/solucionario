@@ -22,7 +22,7 @@
         <% end %>
         <br>
 	  <span class="timestamp">
-	    Realizada <%= q.created_at %> .
+	    Realizada el <%= q.created_at.to_formatted_s(:short)%> .
 	  </span>
 	</li>
 	<% end %>

@@ -1,7 +1,7 @@
 <li>
   <span class="title"><%= simple_format(answer.content) %></span>
   <span class="timestamp">
-    Realizada por <%= answer.writer.name %>, <%= answer.created_at %>.
+    Realizada por <%= answer.writer.name %>, el <%= answer.created_at.to_formatted_s(:short) %>.
   </span>
   <% @writer = User.find(answer.writer.id) %>
     <%if @user==current_user && answer.points!=1 && @useful==0 %>
