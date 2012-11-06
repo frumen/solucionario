@@ -1,7 +1,7 @@
 Solucionario::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
-  config.time_zone = 'Buenos_Aires'
+  config.time_zone = 'America/Argentina/Buenos_Aires'
 
   # Code is not reloaded between requests
   config.cache_classes = true
