@@ -1,0 +1,43 @@
+    admin = User.create!(name: "Fede",
+                 surname: "Frumento",
+                 email: "federicofrumento21@hotmail.com",
+                 password: "estabamos",
+                 password_confirmation: "estabamos",
+                 score: 100,
+                 country_id: 2,
+                 sex: "M",
+                 birth: '1990-04-10',
+                 confirmed: 1)
+    admin.toggle!(:admin)
+    5.times do |n|
+      name  = Faker::Name.name
+      email = "pirulo#{n+1}@pirulo.com"
+      password  = "estabamos"
+      country = n+3
+      User.create!(name: name,
+                   surname: "Perez",
+                   email: email,
+                   password: password,
+                   password_confirmation: password,
+                   country_id: country,
+                   sex: "M",
+                   birth: '1985-12-05',
+                   confirmed: 1)
+    end
+
+
+        5.times do |n|
+      user  = User.find(n+1)
+      user.area_users.create!(area_id: n+1)
+    end
+
+
+    5.times do |n|
+      titulo  = "Tiulo#{n+1}"
+      contenido = "contenido#{n+1}"
+      Question.create!(title: titulo,
+                   content: contenido,
+                   user_id: n+1,
+                   area_id: n+1,
+                   level: 1)
+    end
