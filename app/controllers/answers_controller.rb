@@ -24,6 +24,7 @@ class AnswersController < ApplicationController
 			flash[:success] = @mensaje
 			UserMailer.answer_written(@user, @question).deliver
 			@cuser.update_attribute(:score, @score) 
+			UserMailer.new_score(@cuser).deliver
 			sign_in @cuser
 			redirect_to user_question_path(@user, @question)
 		else

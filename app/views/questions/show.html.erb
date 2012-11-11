@@ -38,18 +38,19 @@
   <% end %>
 <% else %>
   <% if @question.answers.where("available = 0").any? %>
-    <% if @user.score>=@question.level*10 %>
+    <% if (@question.level==1 && @user.score>=40) || (@question.level==2 && @user.score>=80) || (@question.level==3 && @user.score>=120)%>
       <% if @question.level==1 %>
-        <%= link_to "Canjear 10 puntos", user_question_path(@user, @question), method: :put,  class: "btn btn-large btn-primary" %>
+        <%= link_to "Canjear 40 puntos", user_question_path(@user, @question), method: :put,  class: "btn btn-large btn-primary" %>
       <% end %>
       <% if @question.level==2 %>
-        <%= link_to "Canjear 20 puntos", user_question_path(@user, @question), method: :put,  class: "btn btn-large btn-primary" %>
+        <%= link_to "Canjear 80 puntos", user_question_path(@user, @question), method: :put,  class: "btn btn-large btn-primary" %>
       <% end %>
       <% if @question.level==3 %>
-        <%= link_to "Canjear 30 puntos", user_question_path(@user, @question), method: :put,  class: "btn btn-large btn-primary" %>
+        <%= link_to "Canjear 120 puntos", user_question_path(@user, @question), method: :put,  class: "btn btn-large btn-primary" %>
       <% end %>
     <% else %>
       <%= link_to "Comprar puntos", buy_path, class: "btn btn-large btn-primary" %>
+      <%= link_to "Responder Preguntas", questions_path, class: "btn btn-large btn-primary" %>
     <% end %>
   <% end %>
   <%if @useful == 0 and @shown != 0 %>
