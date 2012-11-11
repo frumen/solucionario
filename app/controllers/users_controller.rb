@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.find(:all, order: :score).reverse
   end
 
   def top5

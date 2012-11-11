@@ -73,6 +73,11 @@ class QuestionsController < ApplicationController
         end
       end
     end
+    @questions.each do |q|
+      if q.solved==1
+        @questions.delete(q)
+      end
+    end
   end
 
   def refund
