@@ -17,7 +17,24 @@
 			      <%= render 'shared/comment_fields', f: ff %>
 			      <% end %>
 				<% end %>
-				<%= f.submit "Calificar", class: "btn btn-large btn-primary" %>
-			<% end %>
 		</div>
 	</div>
+	<center>
+	 <%= f.submit "Calificar", class: "btn btn-large btn-primary" %>
+	</center>
+<% end %>
+<div class="row">
+  <div class="span6 offset3">
+  <div class="aclaracion">
+   <p>
+    Premiarás a los usuarios participantes por la mejor respuesta. Puedes otorgar porcentajes de utilidad a los comentarios que ayudaron, pero en total no pueden superar el 50%.
+   </p>
+   <p>
+   	La cantidad total de puntos que ganarán los calificados depende de la urgencia:
+   </p>
+   <p>
+    Urgencia baja 50 ptos. | Urgencia Media 100 ptos. | Urgencia Alta 150 ptos.
+   </p>
+  </div>
+ </div>
+</div>

@@ -7,13 +7,15 @@
       <%= f.label :name, 'Apellido' %>
       <%= f.text_field :surname %>
 
+      <%if current_user==nil %>
       <%= f.label :email, 'E-Mail' %>
       <%= f.text_field :email %>
+      <% end %>
 
       <%= f.label :password, 'Contraseña' %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmación" %>
+      <%= f.label :password_confirmation, "Confirmación de contraseña" %>
       <%= f.password_field :password_confirmation %>
 
       <br><br>

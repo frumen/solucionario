@@ -15,7 +15,18 @@
     <%= hidden_field_tag 'comment[user_id]', current_user.id %>
     <%= f.text_area :content, placeholder: "Comentario..." %>
   </div>
-  <%= f.submit "Comentar!", class: "btn btn-large btn-primary" %>
+  <center>
+    <%= f.submit "Comentar!", class: "btn btn-large btn-primary" %>
+  </center>
 <% end %>
   </div>
+</div>
+<div class="row">
+  <div class="span6 offset3">
+  <div class="aclaracion">
+   <p>
+    Si el usuario que cargó la pregunta considera que tu comentario le fue de ayuda, ganarás puntos por colaborar en la respuesta.
+   </p>
+  </div>
+ </div>
 </div>

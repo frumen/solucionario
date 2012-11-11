@@ -39,11 +39,11 @@ class AnswersController < ApplicationController
   		@user = User.find(params[:user_id])
   		@question = Question.find(params[:question_id])
   		if @question.level==1
-			@total = 100
+			@total = 50
 		elsif @question.level==2
-			@total = 300
+			@total = 100
 		else
-			@total = 500
+			@total = 150
 		end
 		@fraction=0.0
 		if params[:answer][:comments_attributes]

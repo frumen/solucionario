@@ -78,7 +78,7 @@ class UsersController < ApplicationController
 
   def buy_sml
     @user = current_user
-    @score = @user.score+50
+    @score = @user.score+75
     @user.update_attribute(:score, @score) 
     sign_in @user
     redirect_to @user
@@ -86,7 +86,7 @@ class UsersController < ApplicationController
 
   def buy_med
     @user = current_user
-    @score = @user.score+100
+    @score = @user.score+150
     @user.update_attribute(:score, @score) 
     sign_in @user
     redirect_to @user
@@ -94,7 +94,7 @@ class UsersController < ApplicationController
 
   def buy_lrg
     @user = current_user
-    @score = @user.score+150
+    @score = @user.score+300
     @user.update_attribute(:score, @score) 
     sign_in @user
     redirect_to @user

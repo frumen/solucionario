@@ -18,7 +18,21 @@
     <%= hidden_field_tag 'answer[user_id]', current_user.id %>
     <%= f.text_area :content, placeholder: "Respuesta..." %>
   </div>
+    <center>
   <%= f.submit "Responder!", class: "btn btn-large btn-primary" %>
+    </center>
 <% end %>
   </div>
+</div>
+<div class="row">
+  <div class="span6 offset3">
+  <div class="aclaracion">
+   <p>
+    Ganarás puntos automáticamente por responder, dependiendo de la urgencia de la pregunta:
+   </p>
+   <p>
+    Urgencia baja 10 puntos | Urgencia Media 20 puntos | Urgencia Alta 30 puntos
+   </p>
+  </div>
+ </div>
 </div>

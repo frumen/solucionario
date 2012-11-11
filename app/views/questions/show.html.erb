@@ -33,19 +33,27 @@
 <br>
 <center>
 <% if current_user!=@user %>
-  <% if !@answers.where("user_id = ?", current_user.id).any? %>
+  <% if !@answers.where("user_id = ?", current_user.id).any? && @question.solved==0 %>
     <%= link_to "Responde!", new_user_question_answer_path(@user, @question), class: "btn btn-large btn-primary" %>
   <% end %>
 <% else %>
   <% if @question.answers.where("available = 0").any? %>
     <% if @user.score>=@question.level*10 %>
-      <%= link_to "Canjear Puntos", user_question_path(@user, @question), method: :put,  class: "btn btn-large btn-primary" %>
+      <% if @question.level==1 %>
+        <%= link_to "Canjear 10 puntos", user_question_path(@user, @question), method: :put,  class: "btn btn-large btn-primary" %>
+      <% end %>
+      <% if @question.level==2 %>
+        <%= link_to "Canjear 20 puntos", user_question_path(@user, @question), method: :put,  class: "btn btn-large btn-primary" %>
+      <% end %>
+      <% if @question.level==3 %>
+        <%= link_to "Canjear 30 puntos", user_question_path(@user, @question), method: :put,  class: "btn btn-large btn-primary" %>
+      <% end %>
     <% else %>
       <%= link_to "Comprar puntos", buy_path, class: "btn btn-large btn-primary" %>
     <% end %>
   <% end %>
   <%if @useful == 0 and @shown != 0 %>
-    <%= link_to "Ninguna es correcta", "/refund/#{@question.id}", class: "btn btn-large btn-primary" %>
+    <%= link_to "Ninguna es correcta", "/refund/#{@question.id}", class: "btn btn-large btn-primary", data: { confirm: "Esta operación te impedirá volver a ver las respuestas cargadas hasta ahora. ¿Estas seguro que ninguna es correcta?" } %>
   <%end%>
 </center>
 <% end %>

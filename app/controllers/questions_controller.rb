@@ -39,11 +39,11 @@ class QuestionsController < ApplicationController
     @user = current_user
     @answers = @question.answers.where("available = 0").slice(0,3)
     if @question.level==1
-      @score = @user.score-10
+      @score = @user.score-40
     elsif @question.level==2
-      @score = @user.score-20
+      @score = @user.score-80
     else
-      @score = @user.score-30
+      @score = @user.score-120
     end
     @user.update_attribute(:score, @score)
     sign_in @user
@@ -61,21 +61,27 @@ class QuestionsController < ApplicationController
       @areacods.push(a.id)
     end
     @questions = Question.find_all_by_area_id(@areacods)
-    @questions.each do |q|
-      if q.user_id==@user.id
-        @questions.delete(q)
-      end
-    end
-    @questions.each do |q|
-      q.answers.each do |a|
-        if a.writer.id==@user.id
+    if !@questions.empty?
+      @questions.each do |q|
+        if q.user_id==@user.id
           @questions.delete(q)
         end
       end
     end
-    @questions.each do |q|
-      if q.solved==1
-        @questions.delete(q)
+    if !@questions.empty?
+      @questions.each do |q|
+        q.answers.each do |a|
+          if a.writer.id==@user.id
+            @questions.delete(q)
+          end
+        end
+      end
+    end
+    if !@questions.empty?
+      @questions.each do |q|
+        if q.solved==1
+          @questions.delete(q)
+        end
       end
     end
   end

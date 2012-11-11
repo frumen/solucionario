@@ -22,6 +22,19 @@
         <%= f.label(:level, "Alto") %>
       </div>
       <br>
+      <div class="aclaracion">
+        <p>
+          Mientras mayor sea el nivel de urgencia, más rápido responderán tu pregunta.
+        </p>
+        <p>
+          Sin embargo, también te costará más puntos ver tus respuestas:
+        </p>
+        <p>
+          Urgencia baja 40 puntos | Urgencia Media 80 puntos | Urgencia Alta 120 puntos
+        </p>
+      </div>
+      <br>
+      <br>
       <h3>Área de Experiencia</h3>
       <br>
       <%= f.collection_select(:area_id, Area.find(:all), :id, :name) %>
