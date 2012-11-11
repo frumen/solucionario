@@ -105,7 +105,7 @@ class UsersController < ApplicationController
     @confirm = 1
     @user.update_attribute(:confirmed, @confirm) 
     sign_in @user
-    flash[:success] = "Usuario Confirmado!"
+    flash[:success] = "Usuario confirmado!"
     redirect_to @user
   end
 
