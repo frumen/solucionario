@@ -19,6 +19,16 @@ class AnswersController < ApplicationController
 			@score = @cuser.score+30
 		end
 		@answer = @question.answers.build(params[:answer])
+		@cur_answers = Answer.find_all_by_question_id(@question.id)
+		@i=0
+		@cur_answers.each do |a|
+			if a.available=1
+				@i=@i+1
+			end
+		end
+		if (@i==@cur_answers.length) && (@i.to_f/3 != @i/3)
+			@answer.available=1
+		end
 		if @answer.save
 			@mensaje = "Usted ahora tiene #{@score} puntos."
 			flash[:success] = @mensaje
