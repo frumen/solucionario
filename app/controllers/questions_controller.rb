@@ -73,7 +73,9 @@ class QuestionsController < ApplicationController
         if q.answers.any?
           ids = []
           q.answers.each do |a|
-            ids.push(a.writer.id)
+            if a.writer
+              ids.push(a.writer.id)
+            end
           end
           if ids.include?(@user.id)
             @questions.delete(q)
