@@ -70,9 +70,11 @@ class QuestionsController < ApplicationController
     end
     if !@questions.empty?
       @questions.each do |q|
-        q.answers.each do |a|
-          if a.writer.id==@user.id
-            @questions.delete(q)
+        if !q.answers == []
+          q.answers.each do |a|
+            if a.writer.id==@user.id
+              @questions.delete(q)
+            end
           end
         end
       end
