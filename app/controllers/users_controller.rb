@@ -66,7 +66,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    @user = User.find(params[:id])
+    @user.update_attribute(:confirmed, 0)
     flash[:success] = "Usuario Eliminado"
     redirect_to root_path
   end
