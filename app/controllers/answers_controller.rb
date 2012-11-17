@@ -87,7 +87,7 @@ class AnswersController < ApplicationController
 		      		redirect_to edit_user_question_answer_path(@user, @question, @answer)
 		      	end
 		      else
-		      	flash[:error] = "Error! Los porcentajes de comentarios deben sumar menos de 50."
+		      	flash[:error] = "Error! Los porcentajes de comentarios deben sumar 50 o menos."
 		      	redirect_to edit_user_question_answer_path(@user, @question, @answer)
 	      	end
 	      else
