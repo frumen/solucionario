@@ -1,23 +1,33 @@
 <% provide(:title, 'Ayuda') %>
 <h1>Ayuda</h1>
 <h2>Funcionamiento Básico</h2>
+
+
 <b><p>Existen 3 escenarios posibles:</p></b>
 <p>
 1.	El usuario crea una consulta.
-Al crear una consulta se deberá definir una dificultad para la misma, habrá tres categorías, donde cada una de estas tendrá ciertos valores asociados: dificultad baja (25pts o 50pts), dificultad media (80pts o 120pts), y dificultad alta (150pts). A la consulta se le debe asignar un nivel de dificultad y un puntaje para que sea dada de alta.</p>
+Al crear una consulta se deberá definir una urgencia para la misma, habrá tres categorías, donde cada una de estas tendrá ciertos valores asociados: urgencia baja (40pts), urgencia media (80pts), y urgencia alta (120pts). A la consulta se le debe asignar un nivel de urgencia y un puntaje para que sea dada de alta.
+</p>
 
 <p>
 2.	El usuario responde una consulta.
-Al responder una consulta, al usuario se le asignarán una cantidad fija de puntos en relación a la dificultad que le había asignado el creador a la misma. Por las respuestas a consultas de dificultad baja se otorgarán 10 puntos, por las de dificultad media se otorgarán 20 puntos y, finalmente, se otorgarán 30 puntos por las de dificultad alta.</p>
+Al responder una consulta, al usuario se le asignarán una cantidad fija de puntos en relación a la urgencia que le había asignado el creador a la misma. Por las respuestas a consultas de urgencia baja se otorgarán 10 puntos, por las de urgencia media se otorgarán 20 puntos y, finalmente, se otorgarán 30 puntos por las de urgencia alta.</p>
  
  <p>
 3.	El usuario desea ver las respuestas a una consulta que realizó.
 Se deberá contar con una cantidad mínima de puntos acumulados para poder realizar esta acción. El usuario que desee ver las respuestas a una consulta que realizó, consumirá la misma cantidad de puntos que le había asignado anteriormente a la misma.</p>
 
 <p>
-Una consecuencia de este escenario es que al ver las respuestas, el usuario deberá puntuarlas en relación a su correctitud. En primer lugar, deberá elegir la mejor respuesta, aquella que le resolvió el problema, al usuario que dio esa respuesta le podrá otorgar un 50%, o más, de los puntos que valía la pregunta. En segundo lugar, podrá otorgarle puntos también a aquellos que colaboraron en la respuesta original pudiendo distribuir entre ellos el 50%, o menos, de los puntos asignados a la consulta.</p>
+Una consecuencia de este escenario es que al ver las respuestas, el usuario deberá puntuarlas en relación a su exactitud. En primer lugar, deberá elegir la mejor respuesta, aquella que le resolvió el problema, al usuario que dio esa respuesta le podrá otorgar un 50%, o más, de los puntos que valía la pregunta. En segundo lugar, podrá otorgarle puntos también a aquellos que colaboraron en la respuesta original pudiendo distribuir entre ellos el 50%, o menos, de los puntos asignados a la consulta. El total que repartirá (sin tener en cuenta la división por porcentaje) será de 50 puntos para urgencia baja, 100 puntos para urgencia media, y 150 puntos para urgencia alta.
+Las respuestas serán visualizadas en grupos de 3, en caso de que ninguna del grupo presentado sea de utilidad para el usuario, lo indicará y tendrá acceso a un nuevo grupo de respuestas sin costo adicional, repitiendo el ciclo hasta encontrar la mejor respuesta.</p>
 
 <br><br>
 <h2>Definiciones</h2>
 <p>
 •	Área de experiencia: aquella en que el usuario tiene una capacidad especial, ya sea por formación académica, experiencia laboral, por instrucción personal u otros motivos.</p>
+
+<br><br>
+<h2>Más ayuda</h2>
+<p>
+	Puedes acceder al <a href="manual.pdf">Manual de Usuario</a>.
+</p>
