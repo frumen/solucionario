@@ -22,7 +22,7 @@ class AnswersController < ApplicationController
 		@cur_answers = Answer.find_all_by_question_id(@question.id)
 		@i=0
 		@cur_answers.each do |a|
-			if a.available=1
+			if a.available==1
 				@i=@i+1
 			end
 		end

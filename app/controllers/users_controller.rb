@@ -58,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.find(:all, order: :score).reverse
+    @users = User.find_all_by_confirmed(1, order: :score).reverse
   end
 
   def top5
